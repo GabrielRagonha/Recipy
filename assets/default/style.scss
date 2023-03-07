@@ -1,0 +1,10 @@
+//Default reset
+@use '_normalize.scss';
+
+//Colors and fonts
+@use '_colors.scss';
+@use '_fonts.scss';
+
+//Parts
+@use '../../src/scss/parts/header.scss';
+@use '../../src/scss/parts/footer.scss';

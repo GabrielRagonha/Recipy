@@ -1,0 +1,28 @@
+{
+  "name": "recipy",
+  "version": "1.0.0",
+  "description": "Wordpress Theme",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/GabrielRagonha/Recipy.git"
+  },
+  "keywords": [
+    "Recipy",
+    "wordpress",
+    "theme",
+    "php"
+  ],
+  "author": "Gabriel Cesar Ragonha Rodrigues",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/GabrielRagonha/Recipy/issues"
+  },
+  "homepage": "https://github.com/GabrielRagonha/Recipy#readme",
+  "devDependencies": {
+    "gulp": "^4.0.2",
+    "gulp-rename": "^2.0.0",
+    "gulp-sass": "^5.1.0",
+    "gulp-uglify": "^3.0.2",
+    "sass": "^1.58.3"
+  }
+}
