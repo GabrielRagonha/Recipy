@@ -24,18 +24,50 @@
         <div class="home__top__carousel__content">
           <?php
             $args = array(
-              'post_type' => 'banners'
+              'post_type'     => 'banners',
+              'posts_per_page' => -1
             );
           
             $banners = get_posts($args);
+            $counter = 5;
 
-            foreach ($banners as $banner): ?>
-              <div class="home__top__carousel__item"> 
-                <figure class="home__top__carousel__item--figure">
-                  <img class="home__top__carousel__item--image" src="<?= get_field("imagem_do_banner", $banner->ID)?>">
-                </figure>
-              </div>
-            <?php endforeach;
+            for ($i = 1; $i <= $counter; $i++):
+              foreach ($banners as $banner): 
+                if (get_field("visualizacao_do_banner", $banner->ID) == "HOME - Banner home carrossel ($i)"): ?>
+                  <div class="home__top__carousel__item"> 
+                    <figure class="home__top__carousel__item--figure">
+                      <a class="home__top__carousel__item--link" href="<?= get_field("url_de_redirecionamento", $banner->ID) ?>">
+                        <img class="home__top__carousel__item--image" src="<?= get_field("imagem_do_banner", $banner->ID) ?>">
+                      </a>
+                    </figure>
+                  </div>
+                <?php endif;
+              endforeach;
+            endfor; 
+          ?>
+        </div>
+      </div>
+    </section>
+
+    <section class="home__mosaic">
+      <div class="home__mosaic">
+        <div class="home__mosaic__content">
+          <?php
+            $counter = 3;
+
+            for ($i = 1; $i <= $counter; $i++):
+              foreach ($banners as $banner): 
+                if (get_field("visualizacao_do_banner", $banner->ID) == "HOME - Banner home mosaico ($i)"): ?>
+                  <div class="home__mosaic__item home__mosaic__item--<?= $i ?>"> 
+                    <figure class="home__mosaic__item--figure">
+                      <a class="home__mosaic__item--link" href="<?= get_field("url_de_redirecionamento", $banner->ID) ?>">
+                        <img class="home__mosaic__item--image" src="<?= get_field("imagem_do_banner", $banner->ID) ?>">
+                      </a>
+                    </figure>
+                  </div>
+                <?php endif;
+              endforeach;
+            endfor; 
           ?>
         </div>
       </div>
