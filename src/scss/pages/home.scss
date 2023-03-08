@@ -2,6 +2,10 @@
   &__container {
     max-width: 1280px;
     margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    gap: 68px;
+    padding-block: 0 68px;
   }
 
   &__top {
@@ -36,6 +40,66 @@
           max-height: 100%;
           max-width: 100%;
           object-fit: cover;
+        }
+      }
+    }
+  }
+
+  &__mosaic {
+    &__content {
+      justify-content: center;
+      display: grid;
+      width: 100%;
+      margin: 0 auto;
+      grid-gap: 16px;
+    }
+
+    &__item {
+      border-radius: 5px;
+      overflow: hidden;
+      position: relative;
+      &--figure {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+
+      &--image {
+        max-width: 100%;
+        object-fit: cover;
+      }
+
+      &--link {
+        &:after {
+          content: "";
+          width: 100%;
+          height: 100%;
+          background: linear-gradient(180deg, rgba(30, 30, 30, 0) 0%, rgba(30, 30, 30, 0.6) 100%);
+          display: block;
+          position: absolute;
+          top: 0;
+        }
+      }
+
+      &--1 {
+        grid-column: 1/3;
+        figure {
+          max-width: 1062px;
+           max-height: 250px;
+        }
+      }
+
+      &--2 {
+        figure {
+          max-width: 635px;
+          max-height: 434px;
+        }
+      }
+
+      &--3 {
+        figure {
+          max-width: 412px;
+          max-height: 434px;
         }
       }
     }
